@@ -1,0 +1,19 @@
+.button {
+    display: inline-block;
+    border: solid 1px transparent;
+    padding: 10px 20px;
+    font-size: 1rem;
+    user-select: none;
+
+    &:active {
+        border: inset 1px;
+    }
+
+    &--danger {
+        background-color: hotpink;
+    }
+
+    &--success {
+        background-color: lightgreen;
+    }
+}

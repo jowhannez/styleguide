@@ -1,0 +1,24 @@
+.content-width {
+
+    &--small, &--medium, &--large, &--xlarge {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 $content-padding;
+    }
+    
+    &--small {
+        max-width: calc(#{$screen-medium} + 2 * #{$content-padding});
+    }
+    
+    &--medium {
+        max-width: calc(#{$screen-large} + 2 * #{$content-padding});
+    }
+    
+    &--large {
+        max-width: calc(#{$screen-xlarge} + 2 * #{$content-padding});
+    }
+    
+    &--xlarge {
+        max-width: calc(#{$screen-xxlarge} + 2 * #{$content-padding});
+    }
+}
