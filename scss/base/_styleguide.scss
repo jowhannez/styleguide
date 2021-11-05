@@ -45,11 +45,10 @@ html {
         }
     }
 
-    &--scss {
+    &--scss, &--js, &--docs {
         padding-bottom: 12px;
-
+        
         &:before {
-            content: 'SCSS';
             position: absolute;
             font-size: 12px;
             font-weight: bold;
@@ -57,15 +56,19 @@ html {
         }
     }
 
+    &--scss {
+        &:before {
+            content: 'SCSS';
+        }
+    }
     &--js {
-        padding-bottom: 12px;
-
         &:before {
             content: 'JS';
-            position: absolute;
-            font-size: 12px;
-            font-weight: bold;
-            bottom: 0;
+        }
+    }
+    &--docs {
+        &:before {
+            content: 'DOCS';
         }
     }
 }
@@ -206,6 +209,7 @@ $hamburger-types        : (collapse);
     transition: all 500ms ease-in-out;
     padding: 0 16px;
     border: solid 1px white;
+    margin-bottom: 32px;
 
     &--active {
         border-color: black;
