@@ -162,3 +162,13 @@
         }
     }
 }
+
+.swiper-pagination {
+    position: relative !important;
+    margin-top: 16px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    color: white !important;
+}
