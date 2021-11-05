@@ -9,30 +9,31 @@
         width: 100%;
         margin-bottom: 16px;
 
+        p { background-color: hotpink; }
+
+        &--3, &--4 {
+            p { background-color: lightblue; }
+        }
+        &--8 {
+            p { background-color: lightgreen; }
+        }
+
 		@include breakpoint(medium) {
 			width: 50%;
+
+            &--8 {
+                width: 100%;
+            }
 		}
 		
 		@include breakpoint(large) {
 			width: calc(100% / 3);
 
-            p {
-                background-color: hotpink;
-            }
-
             &--3, &--4 {
                 width: 50%;
-
-                p {
-                    background-color: lightblue;
-                }
             }
             &--8 {
                 width: 100%;
-
-                p {
-                    background-color: lightgreen;
-                }
             }
 		}
 	}

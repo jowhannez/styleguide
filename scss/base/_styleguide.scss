@@ -1,8 +1,44 @@
 .title {
+    position: relative;
     display: block;
+    text-decoration: none;
     font-size: 35px;
+
+    &:hover {
+        text-decoration: underline;
+
+        &:before {
+            content: '#';
+            left: -25px;
+            position: absolute;
+        }
+    }
+}
+
+.title-container {
+    display: flex;
     margin-top: 100px;
     margin-bottom: 32px;
+}
+
+.download-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 16px;
+    
+    &:hover {
+        margin-left: 15px;
+
+        .download-icon {
+            width: 25px;
+            
+        }
+    }
+}
+
+.download-icon {
+    width: 23px;
 }
 
 .info {
@@ -15,6 +51,7 @@
 	color:#CECECE;
 	font-family: Menlo;
 	margin-bottom: 32px;
+    overflow: auto;
 }
 
 .flow__content p {
@@ -28,15 +65,24 @@
 
     &--3, &--4 {
         p {
-            padding-top: 32px;
-            padding-bottom: 32px;
+            @include breakpoint(large) {
+                padding-top: 32px;
+                padding-bottom: 32px;
+            }
         }
     }
 
     &--8 {
         p {
-            padding-top: 64px;
-            padding-bottom: 64px;
+            @include breakpoint(medium) {
+                padding-top: 32px;
+                padding-bottom: 32px;
+            }
+
+            @include breakpoint(large) {
+                padding-top: 64px;
+                padding-bottom: 64px;
+            }
         }
     }
 }

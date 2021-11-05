@@ -1,5 +1,10 @@
-.content-width {
+$content-padding: 16px;
+$screen-small   : 640px;
+$screen-medium  : 1024px;
+$screen-large   : 1200px;
+$screen-xlarge  : 1440px;
 
+.content-width {
     &--small, &--medium, &--large, &--xlarge {
         width: 100%;
         margin: 0 auto;
@@ -7,18 +12,18 @@
     }
     
     &--small {
-        max-width: calc(#{$screen-medium} + 2 * #{$content-padding});
+        max-width: calc(#{$screen-small} + 2 * #{$content-padding});
     }
     
     &--medium {
-        max-width: calc(#{$screen-large} + 2 * #{$content-padding});
+        max-width: calc(#{$screen-medium} + 2 * #{$content-padding});
     }
     
     &--large {
-        max-width: calc(#{$screen-xlarge} + 2 * #{$content-padding});
+        max-width: calc(#{$screen-large} + 2 * #{$content-padding});
     }
     
     &--xlarge {
-        max-width: calc(#{$screen-xxlarge} + 2 * #{$content-padding});
+        max-width: calc(#{$screen-xlarge} + 2 * #{$content-padding});
     }
 }

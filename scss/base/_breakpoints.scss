@@ -6,12 +6,12 @@
  * ex: @include breakpoint(medium down){}
  */
 
- $breakpoints: (
-	small  : $screen-small,
-	medium : $screen-medium,
-	large  : $screen-large,
-	xlarge : $screen-xlarge,
-	xxlarge: $screen-xxlarge,
+$breakpoints: (
+	small  : 0px,
+	medium : 640px,
+	large  : 1024px,
+	xlarge : 1200px,
+	xxlarge: 1440px,
 );
 
 @function strip-unit($num) {
