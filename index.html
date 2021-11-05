@@ -10,6 +10,43 @@
 <body>
     <section class="content-width--small">
         <div class="title-container">
+            <a class="title" id="breakpoints" href="#breakpoints">breakpoints</a>
+            <a class="download-link" href="./scss/base/_breakpoints.scss" download>
+                <img class="download-icon" src="./web/img/download.png" alt="" title="Download stylesheet">
+            </a>
+        </div>
+        <p class="info">Smooth media queries. Allows you to specify breakpoints for different viewports and include them seamlessly in your stylesheets.</p>
+        <pre class="code">
+            <code>
+<!--      -->    // In _breakpoints.scss
+<!--      -->    $breakpoints: (
+<!--      -->        small  : 0px,
+<!--      -->        medium : 640px,
+<!--      -->        large  : 1024px,
+<!--      -->        xlarge : 1200px,
+<!--      -->        xxlarge: 1440px,
+<!--      -->    );
+
+
+<!--      -->    // In your stylesheet
+<!--      -->    .myclass {
+<!--      -->        color: blue;
+
+<!--      -->        @include breakpoint(medium) {
+<!--      -->            color: red;
+<!--      -->        }
+
+<!--      -->        // Is equivalent to
+<!--      -->        @media screen and (min-width: 640px) {
+<!--      -->            color: red;
+<!--      -->        }
+<!--      -->    }
+            </code><!--
+    --></pre>
+    </section>
+
+    <section class="content-width--small">
+        <div class="title-container">
             <a class="title" id="button" href="#button">.button</a>
             <a class="download-link" href="./scss/blocks/_button.scss" download>
                 <img class="download-icon" src="./web/img/download.png" alt="" title="Download stylesheet">
