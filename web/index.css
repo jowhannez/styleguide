@@ -70,10 +70,34 @@ a {
   color: inherit; }
 
 .title {
+  position: relative;
   display: block;
-  font-size: 35px;
+  text-decoration: none;
+  font-size: 35px; }
+  .title:hover {
+    text-decoration: underline; }
+    .title:hover:before {
+      content: '#';
+      left: -25px;
+      position: absolute; }
+
+.title-container {
+  display: flex;
   margin-top: 100px;
   margin-bottom: 32px; }
+
+.download-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 16px; }
+  .download-link:hover {
+    margin-left: 15px; }
+    .download-link:hover .download-icon {
+      width: 25px; }
+
+.download-icon {
+  width: 23px; }
 
 .info {
   font-size: 20px;
@@ -83,21 +107,28 @@ a {
   background-color: #1C1C1C;
   color: #CECECE;
   font-family: Menlo;
-  margin-bottom: 32px; }
+  margin-bottom: 32px;
+  overflow: auto; }
 
 .flow__content p {
   padding-top: 16px;
   padding-bottom: 16px;
   margin: 0; }
 
-.flow__item--3, .flow__item--4 {
-  padding-top: 32px;
-  padding-bottom: 32px;
+.flow__item {
   margin: 0; }
-.flow__item--8 {
-  padding-top: 64px;
-  padding-bottom: 64px;
-  margin: 0; }
+  @media screen and (min-width: 64em) {
+    .flow__item--3 p, .flow__item--4 p {
+      padding-top: 32px;
+      padding-bottom: 32px; } }
+  @media screen and (min-width: 40em) {
+    .flow__item--8 p {
+      padding-top: 32px;
+      padding-bottom: 32px; } }
+  @media screen and (min-width: 64em) {
+    .flow__item--8 p {
+      padding-top: 64px;
+      padding-bottom: 64px; } }
 
 .grid {
   text-align: center; }
@@ -138,22 +169,24 @@ a {
   .flow__item {
     width: 100%;
     margin-bottom: 16px; }
+    .flow__item p {
+      background-color: hotpink; }
+    .flow__item--3 p, .flow__item--4 p {
+      background-color: lightblue; }
+    .flow__item--8 p {
+      background-color: lightgreen; }
     @media screen and (min-width: 40em) {
       .flow__item {
-        width: 50%; } }
+        width: 50%; }
+        .flow__item--8 {
+          width: 100%; } }
     @media screen and (min-width: 64em) {
       .flow__item {
         width: calc(100% / 3); }
-        .flow__item p {
-          background-color: hotpink; }
         .flow__item--3, .flow__item--4 {
           width: 50%; }
-          .flow__item--3 p, .flow__item--4 p {
-            background-color: lightblue; }
         .flow__item--8 {
-          width: 100%; }
-          .flow__item--8 p {
-            background-color: lightgreen; } }
+          width: 100%; } }
   .flow__content {
     padding: 0 8px; }
 
