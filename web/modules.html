@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style guide</title>
+    <link rel="stylesheet" href="./css/index.min.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="header__menu">
+            <a class="header__menu-item" href="./index.html">CSS only</a>
+            <a class="header__menu-item header__menu-item--active" href="./modules.html">Javascript modules</a>
+        </nav>
+    </header>
+
+    <section class="content-width--small">
+        <div class="title-container">
+            <a class="title" id="component loader" href="#component loader">component loader</a>
+            <a class="download-link download-link--js" href="../js/index.js" download>
+                <img class="download-icon" src="./img/download.png" alt="" title="Download stylesheet">
+            </a>
+        </div>
+        <p class="info">This is the main entry point for webpack/laravel-mix. This file acts as an "autoloader" for any files placed under the "js/components" directory. So just create the directory, place any component file in it, and it should be auto bundled. The component file "can" have a default export as an object with a method init() that will be called on page load</p>
+        <pre class="code">
+            <code>
+<!--      -->    // Place autoloader in js directory
+
+<!--      -->    // js/components/someComponent.js
+
+
+<!--      -->    export default {
+<!--      -->        name: 'someComponent',
+<!--      -->        init() {
+<!--      -->            // this will run on page load
+<!--      -->        }
+<!--      -->    }
+            </code><!--
+    --></pre>
+    </section>
+
+<!--
+    <section class="content-width--small">
+        <div class="title-container">
+            <a class="title" id="slider" href="#slider">.slider</a>
+            <a class="download-link download-link--scss" href="../scss/base/_slider.scss" download>
+                <img class="download-icon" src="./img/download.png" alt="" title="Download stylesheet">
+            </a>
+            <a class="download-link download-link--js" href="../js/components/_slider.js" download>
+                <img class="download-icon" src="./img/download.png" alt="" title="Download javascript">
+            </a>
+        </div>
+    </section>
+    -->
+    <script src="./js/index.min.js"></script>
+</body>
+</html>

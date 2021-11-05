@@ -22,6 +22,7 @@
 }
 
 .download-link {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,9 +31,37 @@
     &:hover {
         margin-left: 15px;
 
+        &:before {
+            font-size: 13px;
+            bottom: -3px;
+        }
+
         .download-icon {
-            width: 25px;
-            
+            width: 25px;       
+        }
+    }
+
+    &--scss {
+        padding-bottom: 12px;
+
+        &:before {
+            content: 'SCSS';
+            position: absolute;
+            font-size: 12px;
+            font-weight: bold;
+            bottom: 0;
+        }
+    }
+
+    &--js {
+        padding-bottom: 12px;
+
+        &:before {
+            content: 'JS';
+            position: absolute;
+            font-size: 12px;
+            font-weight: bold;
+            bottom: 0;
         }
     }
 }
@@ -106,5 +135,30 @@
         padding-top: 16px;
         padding-bottom: 16px;
         background-color: hotpink;
+    }
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    background-color: #ffe1fa;
+    padding: 16px;
+
+    &__menu {
+
+    }
+
+    &__menu-item {
+        text-decoration: none;
+        
+        &:not(:last-child) {
+            margin-right: 16px;
+        }
+        
+        &:hover,
+        &--active {
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+        }
     }
 }

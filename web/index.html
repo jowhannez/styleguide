@@ -5,12 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Style guide</title>
-    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/index.min.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="./">Home</a>
+    <header class="header">
+        <nav class="header__menu">
+            <a class="header__menu-item header__menu-item--active" href="./index.html">CSS only</a>
+            <a class="header__menu-item" href="./modules.html">Javascript modules</a>
         </nav>
     </header>
     <section class="content-width--small">
@@ -241,9 +242,6 @@
             </code><!--
     --></pre>
     </section>
-
-    <section>
-
-    </section>
+    <script src="./js/index.min.js"></script>
 </body>
 </html>
