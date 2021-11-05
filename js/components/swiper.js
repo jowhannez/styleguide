@@ -19,16 +19,16 @@ import "swiper/css/pagination";
 <div class="swiper" data-swiper>
     <div class="swiper-wrapper">
         <div class="swiper-slide">
-            <img src="https://picsum.photos/seed/1/640/450" width="640" height="450"/>
+            <img src="https://picsum.photos/seed/1/640/450" width="640" height="450" alt=""/>
         </div>
         <div class="swiper-slide">
-            <img src="https://picsum.photos/seed/2/640/450" width="640" height="450"/>
+            <img src="https://picsum.photos/seed/2/640/450" width="640" height="450" alt=""/>
         </div>
         <div class="swiper-slide">
-            <img src="https://picsum.photos/seed/3/640/450" width="640" height="450"/>
+            <img src="https://picsum.photos/seed/3/640/450" width="640" height="450" alt=""/>
         </div>
         <div class="swiper-slide">
-            <img src="https://picsum.photos/seed/4/640/450" width="640" height="450"/>
+            <img src="https://picsum.photos/seed/4/640/450" width="640" height="450" alt=""/>
         </div>
     </div>
 
