@@ -24,16 +24,20 @@
 }
 
 .flow__item {
+    margin: 0;
+
     &--3, &--4 {
-        padding-top: 32px;
-        padding-bottom: 32px;
-        margin: 0;
+        p {
+            padding-top: 32px;
+            padding-bottom: 32px;
+        }
     }
 
     &--8 {
-        padding-top: 64px;
-        padding-bottom: 64px;
-        margin: 0;
+        p {
+            padding-top: 64px;
+            padding-bottom: 64px;
+        }
     }
 }
 
