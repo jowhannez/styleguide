@@ -10,40 +10,15 @@
 <body>
     <header class="header">
         <nav class="header__menu">
-            <a class="header__menu-item" href="./index.html">CSS only</a>
+            <a class="header__menu-item" href="./index.html">Bundling assets</a>
+            <a class="header__menu-item" href="./stylesheets.html">CSS</a>
             <a class="header__menu-item header__menu-item--active" href="./modules.html">Javascript modules</a>
         </nav>
     </header>
 
     <section class="content-width--small">
         <div class="title-container">
-            <a class="title" id="component-loader" href="#component-loader">Component loader</a>
-            <a class="download-link download-link--js" href="../js/index.js" download>
-                <img class="download-icon" src="./img/download.png" alt="" title="Download stylesheet">
-            </a>
-        </div>
-        <p class="info">This is the main entry point for webpack/laravel-mix. This file acts as an "autoloader" for any files placed under the "js/components" directory. So just create the directory, place any component file in it, and it should be auto bundled. The component file "can" have a default export as an object with a method init() that will be called on page load</p>
-        <pre class="code">
-            <code>
-<!--      -->    // Place autoloader in js directory
-
-<!--      -->    // js/components/someComponent.js
-
-
-<!--      -->    export default {
-<!--      -->        name: 'someComponent',
-<!--      -->        init() {
-<!--      -->            // this will run on page load
-<!--      -->        }
-<!--      -->    }
-            </code><!--
-    --></pre>
-    </section>
-
-
-    <section class="content-width--small">
-        <div class="title-container">
-            <a class="title" id="swiper" href="#swiper">.swiper</a>
+            <a class="title" id="swiper" href="#swiper">swiper.js</a>
             <a class="download-link download-link--js" href="../js/components/swiper.js" download>
                 <img class="download-icon" src="./img/download.png" alt="" title="Download javascript">
             </a>
@@ -74,6 +49,59 @@
 <!--      -->    npm install --save-dev swiper
 
 <!--      -->    //version used in example: "swiper": "7.2.0"
+            </code><!--
+    --></pre>
+    </section>
+
+    <section class="content-width--small">
+        <div class="title-container">
+            <a class="title" id="toggle" href="#toggle">toggle.js</a>
+            <a class="download-link download-link--js" href="../js/components/toggle.js" download>
+                <img class="download-icon" src="./img/download.png" alt="" title="Download javascript">
+            </a>
+        </div>
+        <p class="info">General implementation of toggling css classes based on data attributes. Simply add the attribute <code class="code">data-toggle</code> to the button and <code class="code">data-toggle-target</code> to the target(s).</p>
+        <p class="info">The order of classes matters here, if no class is specified with the attribute <code class="code">data-toggle-class</code>, the first class will be toggled on with <code class="code">--active</code> at the end.</p>
+        <div class="toggle">
+            <button class="toggle__button button" data-toggle="test">Click me</button>
+            <div class="toggle__target" data-toggle-target="test" data-toggle-class="green">I'm the target</div>
+        </div>
+    </section>
+
+    <section class="content-width--small">
+        <div class="title-container">
+            <a class="title" id="hamburgers" href="#hamburgers">hamburgers.js</a>
+            <a class="download-link download-link--js" href="../js/components/hamburger.js" download>
+                <img class="download-icon" src="./img/download.png" alt="" title="Download javascript">
+            </a>
+        </div>
+        <p class="info">hamburgers.js comes with a whole bunch of standard animations which can be found <a href="https://jonsuh.com/hamburgers/" rel="noopener" target="_blank">here</a>. Simply add the class with the corresponding modifier to your hamburgers-div.</p>
+        <button class="hamburger hamburger--collapse" type="button">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+        </button>
+        <nav class="menu">
+            <a class="menu__item" href="#">Endless</a>
+            <a class="menu__item" href="#">Menu</a>
+            <a class="menu__item" href="#">Possibilities</a>
+        </nav>
+        <pre class="code">
+            <code>
+<!--      -->    npm install --save-dev hamburgers
+
+<!--      -->    // Include hamburger styles in your index.scss
+<!--      -->    @import '~hamburgers/_sass/hamburgers/hamburgers';
+
+<!--      -->    // Hamburgers scss config overrides
+<!--      -->    $hamburger-padding-x    : 0px;
+<!--      -->    $hamburger-padding-y    : 14px;
+<!--      -->    $hamburger-layer-width  : 23px;
+<!--      -->    $hamburger-layer-height : 2px;
+<!--      -->    $hamburger-layer-spacing: 5px;
+<!--      -->    $hamburger-layer-color  : black;
+<!--      -->    $hamburger-hover-opacity: 1;
+<!--      -->    $hamburger-types        : (collapse);
             </code><!--
     --></pre>
     </section>

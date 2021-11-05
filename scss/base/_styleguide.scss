@@ -1,3 +1,7 @@
+html {
+	font-family: 'Roboto', sans-serif;
+}
+
 .title {
     position: relative;
     display: block;
@@ -73,6 +77,16 @@
 .info {
 	font-size: 20px;
 	margin-bottom: 32px;
+    text-align: justify;
+
+    .code {
+        font-size: 18px;
+        padding: 0 3px;
+    }
+
+    a {
+        color: hotpink;
+    }
 }
 
 .code {
@@ -171,4 +185,70 @@
 .swiper-button-prev,
 .swiper-button-next {
     color: white !important;
+}
+
+// Hamburgers
+$hamburger-padding-x    : 0px;
+$hamburger-padding-y    : 14px;
+$hamburger-layer-width  : 23px;
+$hamburger-layer-height : 2px;
+$hamburger-layer-spacing: 5px;
+$hamburger-layer-color  : black;
+$hamburger-hover-opacity: 1;
+$hamburger-types        : (collapse);
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    font-size: 25px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 500ms ease-in-out;
+    padding: 0 16px;
+    border: solid 1px white;
+
+    &--active {
+        border-color: black;
+        padding: 16px;
+        max-height: 300px;
+    }
+
+    &__item {
+        &:not(:last-child) {
+            margin-bottom: 16px;
+        }
+    }
+}
+
+
+.toggle {
+    display: flex;
+
+    &__button {
+        padding: 16px;
+
+        &--active {
+            background-color: hotpink;
+        }
+    }
+
+    &__target {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: hotpink;
+        margin-left: 16px;
+        padding: 16px;
+    }
+}
+
+.green {
+    background-color: lime;
+}
+
+.hamburger {
+    &:after {
+        content: '<-- click me!';
+        margin-left: 10px;
+    }
 }

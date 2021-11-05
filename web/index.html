@@ -10,238 +10,82 @@
 <body>
     <header class="header">
         <nav class="header__menu">
-            <a class="header__menu-item header__menu-item--active" href="./index.html">CSS only</a>
+            <a class="header__menu-item header__menu-item--active" href="./index.html">Bundling assets</a>
+            <a class="header__menu-item" href="./stylesheets.html">CSS</a>
             <a class="header__menu-item" href="./modules.html">Javascript modules</a>
         </nav>
     </header>
+
     <section class="content-width--small">
         <div class="title-container">
-            <a class="title" id="breakpoints" href="#breakpoints">Breakpoints</a>
-            <a class="download-link download-link--scss" href="../scss/base/_breakpoints.scss" download>
-                <img class="download-icon" src="./img/download.png" alt="" title="Download stylesheet">
+            <a class="title" id="laravel-mix" href="#laravel-mix">Laravel-mix</a>
+            <a class="download-link download-link--js" href="../webpack.mix.js" download>
+                <img class="download-icon" src="./img/download.png" alt="" title="Download mix file">
             </a>
         </div>
-        <p class="info">Smooth media queries. Allows you to specify breakpoints for different viewports and include them seamlessly in your stylesheets.</p>
+        <p class="info">Laravel mix is a webpack wrapper that is very easy to get up and running. Simply install a couple modules and add a .babelrc to the root directory. Attached is the webpack.mix.js file that also goes in the root.</p>
         <pre class="code">
             <code>
-<!--      -->    // In _breakpoints.scss
-<!--      -->    $breakpoints: (
-<!--      -->        small  : 0px,
-<!--      -->        medium : 640px,
-<!--      -->        large  : 1024px,
-<!--      -->        xlarge : 1200px,
-<!--      -->        xxlarge: 1440px,
-<!--      -->    );
+<!--      -->    npm install --save-dev laravel-mix laravel-mix-polyfill
+<!--      -->    npm install --save-dev babel-plugin-import-directory
 
-
-<!--      -->    // In your stylesheet
-<!--      -->    .myclass {
-<!--      -->        color: blue;
-
-<!--      -->        @include breakpoint(medium) {
-<!--      -->            color: red;
-<!--      -->        }
-
-<!--      -->        // Is equivalent to
-<!--      -->        @media screen and (min-width: 640px) {
-<!--      -->            color: red;
-<!--      -->        }
+<!--      -->    // .babelrc
+<!--      -->    {
+<!--      -->        "plugins": [
+<!--      -->            "import-directory",
+<!--      -->            "@babel/plugin-syntax-dynamic-import"
+<!--      -->        ],
+<!--      -->        "presets": [
+<!--      -->            [
+<!--      -->                "@babel/preset-env",
+<!--      -->                {
+<!--      -->                    "useBuiltIns": "usage",
+<!--      -->                    "corejs": {
+<!--      -->                        "version": 3,
+<!--      -->                        "proposals": false
+<!--      -->                    },
+<!--      -->                    "targets": {
+<!--      -->                        "ie": "11"
+<!--      -->                    }
+<!--      -->                }
+<!--      -->            ]
+<!--      -->        ]
 <!--      -->    }
+
+<!--      -->    // package.json
+<!--      -->    "scripts": {
+<!--      -->        "dev": "mix watch",
+<!--      -->        "prod": "mix --production"
+<!--      -->    },
             </code><!--
     --></pre>
     </section>
 
     <section class="content-width--small">
         <div class="title-container">
-            <a class="title" id="button" href="#button">.button</a>
-            <a class="download-link download-link--scss" href="../scss/blocks/_button.scss" download>
+            <a class="title" id="component-loader" href="#component-loader">Component loader</a>
+            <a class="download-link download-link--js" href="../js/index.js" download>
                 <img class="download-icon" src="./img/download.png" alt="" title="Download stylesheet">
             </a>
         </div>
-        <button class="button">.button</button>
-        <button class="button button--danger">.button--danger</button>
-        <button class="button button--success">.button--success</button>
-    </section>
-
-    <section>
-        <div class="title-container content-width--small">
-            <a class="title" id="content-width" href="#content-width">.content-width</a>
-            <a class="download-link download-link--scss" href="../scss/base/_content-width.scss" download>
-                <img class="download-icon" src="./img/download.png" alt="" title="Download stylesheet">
-            </a>
-        </div>
-        <p class="info content-width--small">Useful for keeping the width of your content consistent and smooth scaling to smaller surfaces.</p>
-        <div class="info__content content-width--small">
-            <div>content-width--small</div>
-        </div>
-        <div class="info__content content-width--medium">
-            <div>content-width--medium</div>
-        </div>
-        <div class="info__content content-width--large">          
-            <div>content-width--large</div>
-        </div>
-        <div class="info__content content-width--xlarge">
-            <div>content-width--xlarge</div>
-        </div>
-    </section>
-
-    <section class="content-width--small">
-        <div class="title-container">
-            <a class="title" id="grid" href="#grid">.grid</a>
-            <a class="download-link download-link--scss" href="../scss/blocks/_grid.scss" download>
-                <img class="download-icon" src="./img/download.png" alt="" title="Download stylesheet">
-            </a>
-        </div>
-        <ul class="grid">
-            <li class="grid__item">
-                <div class="grid__content">
-                    <p>.grid__item</p>
-                </div>
-            </li>
-            <li class="grid__item">
-                <div class="grid__content">
-                    <p>.grid__item</p>
-                </div>
-            </li>
-            <li class="grid__item">
-                <div class="grid__content">
-                    <p>.grid__item</p>
-                </div>
-            </li>
-            <li class="grid__item">
-                <div class="grid__content">
-                    <p>.grid__item</p>
-                </div>
-            </li>
-            <li class="grid__item">
-                <div class="grid__content">
-                    <p>.grid__item</p>
-                </div>
-            </li>
-            <li class="grid__item">
-                <div class="grid__content">
-                    <p>.grid__item</p>
-                </div>
-            </li>
-            <li class="grid__item">
-                <div class="grid__content">
-                    <p>.grid__item</p>
-                </div>
-            </li>
-            <li class="grid__item">
-                <div class="grid__content">
-                    <p>.grid__item</p>
-                </div>
-            </li>
-            <li class="grid__item">
-                <div class="grid__content">
-                    <p>.grid__item</p>
-                </div>
-            </li>
-            <li class="grid__item">
-                <div class="grid__content">
-                    <p>.grid__item</p>
-                </div>
-            </li>
-        </ul>
-        <p class="info">The amounts of items per slide can easily be adjusted using css.</p>
+        <p class="info">This is the main entry point for webpack/laravel-mix. This file acts as an "autoloader" for any files placed under the "js/components" directory. So just create the directory, place any component file in it, and it should be auto bundled. The component file "can" have a default export as an object with a method init() that will be called on page load</p>
         <pre class="code">
             <code>
-<!--      -->    &__item {
-<!--      -->        width: 100%;
-<!--      -->        margin-bottom: 16px;
-        
-<!--      -->        @include breakpoint(medium) {
-<!--      -->            width: 50%;
-<!--      -->        }
+<!--      -->    // Place autoloader in js directory
 
-<!--      -->        @include breakpoint(large) {
-<!--      -->            width: calc(100% / 3);  <-- 3 per row
+<!--      -->    // js/components/someComponent.js
+
+
+<!--      -->    export default {
+<!--      -->        name: 'someComponent',
+<!--      -->        init() {
+<!--      -->            // this will run on page load
 <!--      -->        }
 <!--      -->    }
             </code><!--
     --></pre>
     </section>
 
-    <section class="content-width--small">
-        <div class="title-container">
-            <a class="title" id="flow" href="#flow">.flow</a>
-            <a class="download-link download-link--scss" href="../scss/blocks/_flow.scss" download>
-                <img class="download-icon" src="./img/download.png" alt="" title="Download stylesheet">
-            </a>
-        </div>
-        <ul class="flow" style="text-align:center;">
-            <li class="flow__item flow__item--0">
-                <div class="flow__content">
-                    <p>.flow__item--0</p>
-                </div>
-            </li>
-            <li class="flow__item flow__item--1">
-                <div class="flow__content">
-                    <p>.flow__item--1</p>
-                </div>
-            </li>
-            <li class="flow__item flow__item--2">
-                <div class="flow__content">
-                    <p>.flow__item--2</p>
-                </div>
-            </li>
-            <li class="flow__item flow__item--3">
-                <div class="flow__content">
-                    <p>.flow__item--3</p>
-                </div>
-            </li>
-            <li class="flow__item flow__item--4">
-                <div class="flow__content">
-                    <p>.flow__item--4</p>
-                </div>
-            </li>
-            <li class="flow__item flow__item--5">
-                <div class="flow__content">
-                    <p>.flow__item--5</p>
-                </div>
-            </li>
-            <li class="flow__item flow__item--6">
-                <div class="flow__content">
-                    <p>.flow__item--6</p>
-                </div>
-            </li>
-            <li class="flow__item flow__item--7">
-                <div class="flow__content">
-                    <p>.flow__item--7</p>
-                </div>
-            </li>
-            <li class="flow__item flow__item--8">
-                <div class="flow__content">
-                    <p>.flow__item--8</p>
-                </div>
-            </li>
-            <li class="flow__item flow__item--0">
-                <div class="flow__content">
-                    <p>.flow__item--0 (9)</p>
-                </div>
-            </li>
-        </ul>
-        <p class="info">Decide the pattern by adding a modulo-based index to your grid. Since we are operating with a zero indexed list, the loop index should be modulated by the total amount items in your repeating sequence.</p>
-        <pre class="code">
-            <code>
-<!--      -->    &lt;li class="flow__item flow__item--{{ loop.index0 % 9 }}"&gt;
-
-
-<!--      -->    &__item {
-<!--      -->        width: calc(100% / 3);
-
-<!--      -->        &--3, &--4 {
-<!--      -->            width: 50%;
-<!--      -->        }
-
-<!--      -->        &--8 {
-<!--      -->            width: 100%;
-<!--      -->        }
-<!--      -->    }
-            </code><!--
-    --></pre>
-    </section>
     <script src="./js/index.min.js"></script>
 </body>
 </html>
