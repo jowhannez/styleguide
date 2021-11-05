@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 /**
  * Mixins and functions for breakpoints. Any screen break point is a mobile first so {direction} by default is "top"
  * ex: @include breakpoint({screen} {direction}){}
@@ -5,7 +6,6 @@
  * ex: @include breakpoint(small top){}
  * ex: @include breakpoint(medium down){}
  */
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 .content-width--small, .content-width--medium, .content-width--large, .content-width--xlarge {
   width: 100%;
   margin: 0 auto;
@@ -84,6 +84,37 @@ a {
   color: #CECECE;
   font-family: Menlo;
   margin-bottom: 32px; }
+
+.flow__content p {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  margin: 0; }
+
+.flow__item--3, .flow__item--4 {
+  padding-top: 32px;
+  padding-bottom: 32px;
+  margin: 0; }
+.flow__item--8 {
+  padding-top: 64px;
+  padding-bottom: 64px;
+  margin: 0; }
+
+.grid {
+  text-align: center; }
+
+.grid__content p {
+  background-color: hotpink;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  margin: 0; }
+
+.info__content {
+  margin-bottom: 16px;
+  border: dotted 1px hotpink; }
+  .info__content div {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    background-color: hotpink; }
 
 .button {
   display: inline-block;
